@@ -28,3 +28,9 @@ Route::get('{provider}/redirect',[
 	'uses' => 'SocialsController@auth_callback',
 	'as' => 'social.callback'
 ]);
+
+//Route Group protected by auth middleware
+Route::group(['middleware' => 'auth'], function(){
+	//Resource route which registers resource routes just like in the controller --resource
+	Route::resource('channels', 'ChannelsController');
+});
