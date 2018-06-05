@@ -33,6 +33,21 @@ Route::get('{provider}/redirect',[
 Route::group(['middleware' => 'auth'], function(){
 	//Resource route which registers resource routes just like in the controller --resource
 	Route::resource('channels', 'ChannelsController');
+
+	Route::get('/dicussion/create', [
+		'uses' => 'DiscussionsController@create',
+		'as' => 'discussions.create'
+	]);
+
+	Route::post('/dicussion/store', [
+		'uses' => 'DiscussionsController@store',
+		'as' => 'discussions.store'
+	]);
+
+	Route::get('/discussion/{slug}', [
+		'uses' => 'DiscussionsController@show',
+		'as' => 'discussion'
+	]);
 });
 
 Route::get('/dicuss', function () {

@@ -78,8 +78,10 @@
                 <div class="row">
                     {{-- Channels Column --}}
                     <div class="col-md-4">
+                        <a href="{{ route('discussions.create') }}" class="form-control btn btn-primary">Create a new dicussion</a>
+
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header text-center">
                                 Channels
                             </div>
 
