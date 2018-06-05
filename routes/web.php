@@ -34,3 +34,7 @@ Route::group(['middleware' => 'auth'], function(){
 	//Resource route which registers resource routes just like in the controller --resource
 	Route::resource('channels', 'ChannelsController');
 });
+
+Route::get('/dicuss', function () {
+    return view('dicuss');
+});
